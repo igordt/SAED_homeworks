@@ -4,8 +4,16 @@ Homeworks for the course *Statistical Analysis of Experimental Data* (University
 
 Author: Igor Di Tota
 
-## Homework 01: Population of Poland
+## Homework 02: 
 
+
+| File | Content |
+|---|---|
+| [`h2/h2.ipynb`](h2/h2.ipynb) | Jupyter notebook |
+| [`h2/report_h2.pdf`](h2/report_h2.pdf) | PDF report |
+| [`h2/images/`](h2/images/) | Figures produced |
+
+## Homework 01: Population of Poland
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h1/h1.ipynb)
 [![Report](https://img.shields.io/badge/Report-PDF-red?logo=adobeacrobatreader)](h1/report_h1.pdf)

@@ -4,17 +4,9 @@ Homeworks for the course *Statistical Analysis of Experimental Data* (University
 
 Author: Igor Di Tota
 
-### Setup
-The notebooks can be run using a Python virtual environment:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
 ---
 
 ## Homework 02: 
-
 
 | File | Content |
 |---|---|
@@ -33,3 +25,12 @@ pip install -r requirements.txt
 | [`h1/report_h1.pdf`](h1/report_h1.pdf) | PDF report |
 | [`h1/images/`](h1/images/) | Figures produced |
 | [`h1/OECD_Poland_filtered.csv`](h1/OECD_Poland_filtered.csv) | Data set |
+
+---
+### Setup
+The notebooks can be run using a Python virtual environment:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```

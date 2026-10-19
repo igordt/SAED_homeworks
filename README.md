@@ -4,6 +4,15 @@ Homeworks for the course *Statistical Analysis of Experimental Data* (University
 
 Author: Igor Di Tota
 
+### Setup
+The notebooks can be run using a Python virtual environment:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+---
+
 ## Homework 02: 
 
 

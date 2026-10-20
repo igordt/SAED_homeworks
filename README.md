@@ -6,7 +6,10 @@ Author: Igor Di Tota
 
 ---
 
-## Homework 02: 
+## Homework 02: Bertrand paradox
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h2/h2.ipynb)
+[![Report](https://img.shields.io/badge/Report-PDF-red?logo=adobeacrobatreader)](h2/report_h2.pdf)
 
 | File | Content |
 |---|---|

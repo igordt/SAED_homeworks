@@ -6,6 +6,14 @@ Author: Igor Di Tota
 
 ---
 
+## Homework 03: Branching fraction estimate 
+
+| File | Content |
+|---|---|
+| [`h3/h3.ipynb`](h3/h3.ipynb) | Jupyter notebook |
+| [`h3/report_h3.pdf`](h3/report_h3.pdf) | PDF report |
+| [`h3/images/`](h3/images/) | Figures produced |
+
 ## Homework 02: Bertrand paradox
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h2/h2.ipynb)

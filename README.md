@@ -8,6 +8,9 @@ Author: Igor Di Tota
 
 ## Homework 03: Branching fraction estimate 
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h3/h3.ipynb)
+[![Report](https://img.shields.io/badge/Report-PDF-red?logo=adobeacrobatreader)](h3/report_h3.pdf)
+
 | File | Content |
 |---|---|
 | [`h3/h3.ipynb`](h3/h3.ipynb) | Jupyter notebook |

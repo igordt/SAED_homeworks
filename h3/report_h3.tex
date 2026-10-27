@@ -45,4 +45,138 @@
 	\maketitle
 	
 	\section*{Introduction}
+	
+	This homework addresses the evaluation of branching ratios: \textit{consider an experiment measuring decays of the $\omega(782)$ meson, with three dominant decay channels considered:}
+	\begin{enumerate}
+		\item $\omega \to \pi^+\pi^-\pi^0$
+		\item $\omega \to \pi^0\gamma$
+		\item $\omega \to \pi^+\pi^-$
+	\end{enumerate}
+	\textit{From $N = 4117$ decays measured, $N_1 = 3714$ were classified as channel 1, $N_2 = 338$ as channel 2 and $N_3 = 65$ as channel 3. Calculate the corresponding branching ratios and their uncertainties.}\\
+	
+	Below, I present the statistical model describing the measurement, the estimate of the branching ratios with their uncertainties, and a comparison between the correct and a commonly used wrong way of computing these uncertainties.
+	
+	\section*{Statistical model}
+	
+	Each decay is a single trial whose outcome is one of the three channels, with probabilities $p_1, p_2, p_3$: these are the branching ratios we want to measure.
+	Since we assume that every decay ends up in one of these three channels, the probabilities must satisfy the normalization condition
+	\begin{equation}
+		p_1 + p_2 + p_3 = 1 .
+	\end{equation}
+	
+	Because each trial has more than two possible outcomes, the joint probability to observe $N_1, N_2, N_3$ decays in the three channels out of $N$ independent decays is given by the multinomial distribution, the generalization of the binomial distribution:
+	\begin{equation}
+		P(N_1, N_2, N_3) = \frac{N!}{N_1!\, N_2!\, N_3!}\, p_1^{N_1}\, p_2^{N_2}\, p_3^{N_3}, \qquad N_1 + N_2 + N_3 = N .
+	\end{equation}
+	
+	As described in the PDG review, we can regard channel $i$ as ``success'' and all the other channels as ``failure''.
+	Then each $N_i$ individually follows a binomial distribution with $N$ tries, success probability $p_i$ and failure probability $q_i = 1 - p_i$:
+	\begin{equation}
+		P(N_i) = \binom{N}{N_i}\, p_i^{N_i}\, q_i^{\,N - N_i} ,
+	\end{equation}
+	so that the expected value and the variance of each $N_i$ are those of the binomial distribution:
+	\begin{equation}
+		\mathbb{E}(N_i) = p_i N, \qquad \mathbb{V}(N_i) = p_i (1 - p_i) N .
+		\label{eq:binom_var}
+	\end{equation}
+	Note, however, that the $N_i$ are not independent: since $N$ is fixed, if one channel has more decays the others must have fewer.
+	This will be relevant for the uncertainty estimates conducted below.
+	
+	\section*{Branching ratios and their uncertainties}
+	
+	The branching ratio of channel $i$ is estimated as the fraction of decays observed in that channel:
+	\begin{equation}
+		\hat{p}_i = \frac{N_i}{N} .
+	\end{equation}
+	Using the binomial variance of Eq.~\eqref{eq:binom_var}, for fixed $N$, the variance of $\hat{p}_i$ is\footnote{For a random variable $X$ and a constant $a$, $\mathbb{V}(aX) = a^2\,\mathbb{V}(X)$.
+		With $X = N_i$ and $a = 1/N$ the factor $1/N$ comes out squared.}
+	\begin{equation}
+		\sigma^2_{p_i} = \mathbb{V}\!\left(\frac{N_i}{N}\right) = \frac{\mathbb{V}(N_i)}{N^2} = \frac{p_i(1-p_i)\,N}{N^2} = \frac{\hat{p}_i\,(1-\hat{p}_i)}{N},
+		\label{eq:sigma}
+	\end{equation}
+	where the unknown true $p_i$ is replaced by its estimate $\hat{p}_i$.
+	The resulting branching ratios are
+	\begin{equation}
+		\hat{p}_1 = 0.9021 \pm 0.0046, \qquad \hat{p}_2 = 0.0821 \pm 0.0043, \qquad \hat{p}_3 = 0.0158 \pm 0.0019,
+	\end{equation}
+	and their sum is $\sum_i \hat{p}_i = 1$, as required by the normalization condition.
+	
+	\section*{Poisson vs binomial approach}
+	
+	As discussed in the lecture, a common mistake is to compute the uncertainty of $\hat{p}_i = N_i/N$ by treating $N_i$ and $N$ as two independent variables, each with a Poisson uncertainty:
+	\begin{equation}
+		\sigma^2_{N_i} = N_i, \qquad \sigma^2_{N} = N .
+	\end{equation}
+	Propagating the uncertainties for independent variables, $\sigma^2_{p_i} = \sum_k \left(\frac{\partial \hat{p}_i}{\partial x_k}\right)^2 \sigma_{x_k}^2$, with $x_k = N_i, N$ and
+	\begin{equation}
+		\frac{\partial \hat{p}_i}{\partial N_i} = \frac{1}{N}, \qquad \frac{\partial \hat{p}_i}{\partial N} = -\frac{N_i}{N^2},
+	\end{equation}
+	one obtains
+	\begin{equation}
+		\sigma^2_{p_i} = \left(\frac{1}{N}\right)^2 N_i + \left(-\frac{N_i}{N^2}\right)^2 N
+		= \frac{N_i}{N^2} + \frac{N_i^2}{N^3}
+		= \frac{\hat{p}_i\,(1+\hat{p}_i)}{N} \qquad \textbf{\color{red}WRONG}
+	\end{equation}
+	This result is wrong because $N_i$ and $N$ are not independent.
+	
+	The correct approach is to write the branching ratio as
+	\begin{equation}
+		\hat{p}_i = \frac{N_i}{N_i + M_i}, \qquad M_i = N - N_i ,
+	\end{equation}
+	where $M_i$ is the number of decays in all the other channels.
+	Now $N_i$ and $M_i$ are two independent variables with Poisson uncertainty, $\sigma^2_{N_i} = N_i$ and $\sigma^2_{M_i} = M_i$.
+	With the derivatives
+	\begin{equation}
+		\frac{\partial \hat{p}_i}{\partial N_i} = \frac{M_i}{(N_i + M_i)^2}, \qquad \frac{\partial \hat{p}_i}{\partial M_i} = -\frac{N_i}{(N_i + M_i)^2},
+	\end{equation}
+	and using $N_i + M_i = N$, the propagation gives
+	\begin{equation}
+		\sigma^2_{p_i} = \left(\frac{M_i}{N^2}\right)^2 N_i + \left(-\frac{N_i}{N^2}\right)^2 M_i
+		= \frac{N_i\, M_i\,(M_i + N_i)}{N^4}
+		= \frac{1}{N}\,\frac{N_i}{N}\,\frac{M_i}{N}
+		= \frac{\hat{p}_i\,(1-\hat{p}_i)}{N},
+	\end{equation}
+	which is the same result obtained from the binomial distribution, Eq.~\eqref{eq:sigma}.
+	The numerical values of the three approaches are compared in Table~\ref{tab:comparison}.
+	
+	\begin{table}[!h]
+		\centering
+		\begin{tabular}{c c c c c}
+			\hline
+			Channel & $\hat{p}_i$ & $\sigma_{p_i}$ binomial & $\sigma_{p_i}$ Poisson & $\sigma_{p_i}$ Poisson - {\color{red}WRONG} \\
+			\hline
+			1 & $0.9021$ & $0.0046$ & $0.0046$ & $0.0204$ \\
+			2 & $0.0821$ & $0.0043$ & $0.0043$ & $0.0046$ \\
+			3 & $0.0158$ & $0.0019$ & $0.0019$ & $0.0020$ \\
+			\hline
+		\end{tabular}
+		\caption{Uncertainties of the branching ratios obtained from the binomial distribution, from the correct Poisson approach and from the wrong Poisson approach.}
+		\label{tab:comparison}
+	\end{table}
+	\FloatBarrier
+	
+	The binomial approach and the correct Poisson approach give exactly the same uncertainties.
+	The wrong approach overestimates the uncertainty.
+	\section*{Result}
+	
+	The branching ratios of the three dominant decay channels of the $\omega(782)$ meson, with their uncertainties obtained from the binomial distribution, are reported in Table~\ref{tab:result}.
+	
+	\begin{table}[!h]
+		\centering
+		\begin{tabular}{l c c c}
+			\hline
+			Channel & BR & $\sigma_{BR}$ & relative uncertainty \\
+			\hline
+			$\omega \to \pi^+\pi^-\pi^0$ & $0.9021$ & $0.0046$ & $0.5\,\%$ \\
+			$\omega \to \pi^0\gamma$     & $0.0821$ & $0.0043$ & $5.2\,\%$ \\
+			$\omega \to \pi^+\pi^-$      & $0.0158$ & $0.0019$ & $12.3\,\%$ \\
+			\hline
+		\end{tabular}
+		\caption{Branching ratios of the $\omega(782)$ meson and their uncertainties.}
+		\label{tab:result}
+	\end{table}
+	\FloatBarrier
+	
+	The relative uncertainty grows as the number of decays in the channel decreases, so the rare channel $\omega \to \pi^+\pi^-$, with only 65 events, is the least precisely measured.
+	
 \end{document}

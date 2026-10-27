@@ -12,7 +12,6 @@ Author: Igor Di Tota
 |---|---|
 | [`h3/h3.ipynb`](h3/h3.ipynb) | Jupyter notebook |
 | [`h3/report_h3.pdf`](h3/report_h3.pdf) | PDF report |
-| [`h3/images/`](h3/images/) | Figures produced |
 
 ## Homework 02: Bertrand paradox
 

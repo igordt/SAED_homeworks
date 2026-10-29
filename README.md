@@ -5,6 +5,12 @@ Homeworks for the course *Statistical Analysis of Experimental Data* (University
 Author: Igor Di Tota
 
 ---
+## Homework 04:  
+
+| File | Content |
+|---|---|
+| [`h4/h4.ipynb`](h4/h4.ipynb) | Jupyter notebook |
+| [`h4/report_h4.pdf`](h4/report_h4.pdf) | PDF report |
 
 ## Homework 03: Branching fraction estimate 
 

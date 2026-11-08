@@ -5,6 +5,14 @@ Homeworks for the course *Statistical Analysis of Experimental Data* (University
 Author: Igor Di Tota
 
 ---
+## Homework 05: 
+
+| File | Content |
+|---|---|
+| [`h5/h5.ipynb`](h5/h5.ipynb) | Jupyter notebook |
+| [`h5/report_h5.pdf`](h5/report_h5.pdf) | PDF report |
+| [`h5/images/`](h5/images/) | Figures produced |
+
 ## Homework 04: Measurements of rectangular tables
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h4/h4.ipynb)

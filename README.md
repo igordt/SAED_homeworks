@@ -7,6 +7,9 @@ Author: Igor Di Tota
 ---
 ## Homework 04: Measurements of rectangular tables
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h4/h4.ipynb)
+[![Report](https://img.shields.io/badge/Report-PDF-red?logo=adobeacrobatreader)](h4/report_h4.pdf)
+
 | File | Content |
 |---|---|
 | [`h4/h4.ipynb`](h4/h4.ipynb) | Jupyter notebook |

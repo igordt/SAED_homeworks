@@ -5,12 +5,13 @@ Homeworks for the course *Statistical Analysis of Experimental Data* (University
 Author: Igor Di Tota
 
 ---
-## Homework 04:  
+## Homework 04: Measurements of rectangular tables
 
 | File | Content |
 |---|---|
 | [`h4/h4.ipynb`](h4/h4.ipynb) | Jupyter notebook |
 | [`h4/report_h4.pdf`](h4/report_h4.pdf) | PDF report |
+| [`h4/images/`](h4/images/) | Figures produced |
 
 ## Homework 03: Branching fraction estimate 
 

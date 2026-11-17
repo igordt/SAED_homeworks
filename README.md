@@ -5,6 +5,18 @@ Homeworks for the course *Statistical Analysis of Experimental Data* (University
 Author: Igor Di Tota
 
 ---
+## Homework 06: Parameter Inference
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h6/h6.ipynb)
+[![Report](https://img.shields.io/badge/Report-PDF-red?logo=adobeacrobatreader)](h6/report_h6.pdf)
+
+| File | Content |
+|---|---|
+| [`h6/h6.ipynb`](h6/h6.ipynb) | Jupyter notebook |
+| [`h6/report_h6.pdf`](h6/report_h6.pdf) | PDF report |
+| [`h6/images/`](h6/images/) | Figures produced |
+
+---
 ## Homework 05: Volume estimate using Monte Carlo method
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h5/h5.ipynb)

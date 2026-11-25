@@ -14,6 +14,7 @@ Author: Igor Di Tota
 | [`h7/h7.ipynb`](h7/h7.ipynb) | Jupyter notebook |
 | [`h7/report_h7.pdf`](h7/report_h7.pdf) | PDF report |
 | [`h7/images/`](h7/images/) | Figures produced |
+| [`h7/07_homework.dat`](h7/07_homework.dat) | Data set |
 
 ---
 ## Homework 06: Parameter Inference

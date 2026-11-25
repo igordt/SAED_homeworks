@@ -3,6 +3,17 @@
 Homeworks for the course *Statistical Analysis of Experimental Data* (University of Warsaw).
 
 Author: Igor Di Tota
+---
+## Homework 07: Least-squares method
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/igordt/SAED_homeworks/blob/main/h7/h7.ipynb)
+[![Report](https://img.shields.io/badge/Report-PDF-red?logo=adobeacrobatreader)](h7/report_h7.pdf)
+
+| File | Content |
+|---|---|
+| [`h7/h7.ipynb`](h7/h7.ipynb) | Jupyter notebook |
+| [`h7/report_h7.pdf`](h7/report_h7.pdf) | PDF report |
+| [`h7/images/`](h7/images/) | Figures produced |
 
 ---
 ## Homework 06: Parameter Inference

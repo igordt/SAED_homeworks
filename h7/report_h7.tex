@@ -78,7 +78,7 @@
 	\begin{equation}
 		\chi^2(\mathbf{a}) = \sum_{i=1}^{N} \frac{\left(y_i - \sum_{k} a_k f_k(x_i)\right)^2}{\sigma_i^2} ,
 	\end{equation}
-	which, for Gaussian uncertainties, is equivalent to the maximum of the log-likelihood function $\ell = \ln L$, since $\chi^2 = -2\ell$.
+	which, for Gaussian uncertainties, is equivalent to the maximum of the log-likelihood function $\ell = \ln L$, since $\chi^2 = -2\ell$ (up to a constant factor).
 
 	Setting $\partial\chi^2/\partial a_l = 0$ for $l = 0, \dots, M$ gives a system of $M+1$ linear equations
 	\begin{equation}
@@ -116,7 +116,7 @@
 	\subsection*{Implementation}
 
 	For each order $M$, the matrix $\mathbb{A}$ and the vector $\mathbf{b}$ are built following directly their definitions.
-	The system $\mathbb{A}\cdot\mathbf{a} = \mathbf{b}$ is solved with \texttt{np.linalg.solve} instead of computing $\mathbb{A}^{-1}\cdot\mathbf{b}$ explicitly, since for high polynomial orders the matrix $\mathbb{A}$ becomes ill-conditioned (the functions $x^k$ are strongly correlated on the interval of the data).
+	The system $\mathbb{A}\cdot\mathbf{a} = \mathbf{b}$ is solved with \texttt{np.linalg.solve}.
 	The p-value is computed as $1 - P(\chi^2_{min}; N_{df})$ with the cumulative distribution function \texttt{stats.chi2.cdf}; for very small p-values (below about $10^{-16}$) the result is rounded to zero, since $P(\chi^2_{min}; N_{df})$ cannot be distinguished from 1.
 
 	\section*{Fit results}
@@ -279,8 +279,8 @@
 	The coefficient added with respect to the cubic polynomial, $a_4 = -3.12 \pm 0.71$, differs from zero by 4.4 standard deviations, corresponding to a decrease of the $\chi^2$ by $\Delta\chi^2 = 19.1$: if the additional parameter were not needed, a decrease at least this large would be obtained with a probability of only $1.2 \cdot 10^{-5}$.
 
 	\paragraph{The additional parameters of the polynomials of order $M = 5$ and $M = 6$ are not significant enough.}
-	These orders still reduce the $\chi^2$ by $\Delta\chi^2 = 7.0$ and $6.3$, with p-values of about 1\%, which would be considered significant at the 95\% confidence level.
-	However, the corresponding coefficients differ from zero only by 2.6 and 2.5 standard deviations, below the threshold of 3 standard deviations adopted for a significant parameter; moreover, several orders have been tested, which increases the probability that one of them shows a fluctuation of this size.
+	These orders still reduce the $\chi^2$ by $\Delta\chi^2 = 7.0$ and $6.3$, with p-values of about 1\%.
+	However, the corresponding coefficients differ from zero only by 2.6 and 2.5 standard deviations, below the threshold of 3 standard deviations adopted for a significant parameter.
 	At the same time, the fits become too good: $\chi^2_{min}/N_{df}$ decreases to 0.74 for $M = 5$ and 0.42 for $M = 6$.
 	The residuals show the same trend: the fraction within $\pm 1$ increases from 67\% for $M = 4$, in agreement with the expected 68\%, to 83\% for $M = 5$ and 100\% for $M = 6$, while about one third of the residuals are expected outside this range.
 	For $M = 6$ the probability of obtaining a $\chi^2$ as small as the observed one is only $1 - 0.982 = 0.018$.
@@ -308,7 +308,7 @@
 
 	\section*{Final result}
 
-	The data are shown in Figure~\ref{fig:final} together with the polynomial of order $M = 4$, chosen as the adequate description of the data; the curve is drawn only in the range of the measurements.
+	The data are shown in Figure~\ref{fig:final} together with the polynomial of order $M = 4$, chosen as the adequate description of the data.
 	The uncertainty of the fitted curve at a given $x$ is obtained by propagating the covariance matrix of the parameters.
 	Since $\mu(x; \mathbf{a})$ is linear in the parameters, the propagation is exact:
 	\begin{equation}
